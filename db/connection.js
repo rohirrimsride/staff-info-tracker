@@ -1,6 +1,9 @@
 const mysql = require('mysql2');
 require('dotenv').config();
-// Create a .env file in the root directory with DB_USER = 'your mysql username' & DB_PASSWORD = 'yourmysqlpassword' and the .env file to .gitignore
+/*Create a .env file in the root directory with;
+DB_USER = 'your mysql username'
+DB_PASSWORD = 'yourmysqlpassword' 
+and the .env file to .gitignore*/
 const db = mysql.createConnection(
     {
         host: 'localhost',

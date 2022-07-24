@@ -1,12 +1,11 @@
 const inquirer = require('inquirer');
 const db = require('../db/connection');
 const cTable = require('console.table');
-const DepartmentAdd = require('../lib/DepartmentAdd');
+const { addNewDepartment, getCurrentDepartments } = require('./add-table-fields.js');
+// const getCurrentDepartments = require('./add-table-fields.js');
 
 function CompanyHub() {
-    this.department;
-    this.role;
-    this.employee;
+    
 }
 
 CompanyHub.prototype.companyDashboard = function() {
@@ -29,7 +28,10 @@ CompanyHub.prototype.companyDashboard = function() {
                 this.viewDepartments();
             }
             if (selection === 'Add Department') {
-                const department = new DepartmentAdd()
+                addNewDepartment(this);
+            }
+            if (selection === 'Add Role') {
+                getCurrentDepartments(this);
             }
         });
 };
@@ -45,6 +47,7 @@ CompanyHub.prototype.viewDepartments = function() {
         }
         console.log('\n', '\n');
         console.log('Departments');
+        console.log(rows);
         console.table(rows);
         return this.companyDashboard();
     });
