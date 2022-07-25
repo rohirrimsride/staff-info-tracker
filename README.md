@@ -26,8 +26,8 @@
   ## License
   [ISC](https://opensource.org/licenses/ISC)
 
-  ## Tests
-  N/A
+  ## Walkthrough Video
+  [Staff Tracker Walkthrough](https://watch.screencastify.com/v/ze8nZLkKiN2RieWZKYwx)
 
   ## Questions
   If you have any questions please contact me using either of these options.
