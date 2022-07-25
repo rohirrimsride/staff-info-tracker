@@ -30,6 +30,4 @@ CREATE TABLE employees (
         FOREIGN KEY (role_id)
         REFERENCES roles(id)
         ON DELETE CASCADE,
-    CONSTRAINT uc_manager
-        UNIQUE (manager_id)
 );

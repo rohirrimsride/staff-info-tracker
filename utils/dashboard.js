@@ -1,7 +1,11 @@
+// Adds modules
 const inquirer = require('inquirer');
 const db = require('../db/connection');
 const cTable = require('console.table');
-const { addNewDepartment, getCurrentDepartments } = require('./add-table-fields.js');
+// Adds needed functions in different files
+const addNewDepartment = require('./add-departments.js');
+const getCurrentDepartments = require('./add-roles');
+const getCurrentRoles = require('./add-employees');
 // const getCurrentDepartments = require('./add-table-fields.js');
 
 function CompanyHub() {
@@ -33,6 +37,9 @@ CompanyHub.prototype.companyDashboard = function() {
             if (selection === 'Add Role') {
                 getCurrentDepartments(this);
             }
+            if (selection === 'Add Employee') {
+                getCurrentRoles(this);
+            }
         });
 };
 
@@ -47,7 +54,6 @@ CompanyHub.prototype.viewDepartments = function() {
         }
         console.log('\n', '\n');
         console.log('Departments');
-        console.log(rows);
         console.table(rows);
         return this.companyDashboard();
     });
